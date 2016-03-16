@@ -1,6 +1,16 @@
 {
   "name": "em-full-screen-container",
-  "private": true,
+  "authors": [
+    "Eduardo <eduardo.er@gmail.com>"
+  ],
+  "description": "Web component that resizes to match the screen height",
+  "main": "em-full-screen-container.html",
+  "moduleType": [],
+  "keywords": [
+    "full", "screen", "container", "polymer"
+  ],
+  "license": "MIT",
+  "homepage": "",
   "dependencies": {
     "polymer": "Polymer/polymer#master"
   },
