@@ -1,0 +1,41 @@
+<dom-module id="em-full-screen-container">
+  <template>
+    <style>
+      :host {
+        display: block;
+        overflow: hidden;
+      }
+    </style>
+    <!-- local DOM for your element -->
+    <div class="content">
+        <content></content>
+    </div>
+  </template>
+  <script>
+    (function () {
+        // -- BEGIN POLYMER PROTOTYPE REGISTRATION ---------
+        // (one of Boolean, Date, Number, String, Array or Object)
+        Polymer({
+            is: 'em-full-screen-container',
+            properties: {
+                offset: {
+                    type: Number(),
+                    value: 0
+                }
+            },
+            ready: function ready() {
+              var that = this;
+              window.addEventListener("resize", function() { that.windowResize(); });
+              this.windowResize(null);
+            },
+            setHeight: function(h) {
+              this.style.height = h + 'px';
+            },
+            windowResize: function(e) {
+              this.setHeight(window.innerHeight / 3 - this.offset);
+            }
+            // -- END OF POLYMER PROTOTYPE ---------------
+        });
+    })();
+  </script>
+</dom-module>
